@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Kay's Gazette — Saturday, November 14, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf7ee; --paper2:#f3ecdc; --ink:#1a1712; --ink2:#4a4236; --muted:#6b5f4d;
+  --rule:#1a1712; --rule-light:#c9bda3; --accent:#8a2a1f; --accent2:#1f4d3a;
+  --card:#fffdf7;
+  --shadow:0 1px 0 rgba(0,0,0,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#171512; --paper2:#201d18; --ink:#f0e8d8; --ink2:#cfc4ae; --muted:#a99c84;
+  --rule:#f0e8d8; --rule-light:#4a4236; --card:#221f1a; --accent:#e08a7d; --accent2:#8fc9ae; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.55}
+a{color:var(--accent);text-underline-offset:3px}
+img{display:block;max-width:100%}
+button,[role="button"]{min-height:44px;min-width:44px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 40px}
+
+/* top strip */
+.topstrip{border-bottom:3px double var(--rule);padding:8px 0 6px;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between;align-items:center;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+
+/* masthead */
+.masthead{text-align:center;padding:18px 0 10px;border-bottom:1px solid var(--rule)}
+.masthead h1{font-family:"Playfair Display",Georgia,serif;font-weight:900;font-size:clamp(44px,11vw,92px);line-height:.95;margin:6px 0 4px;letter-spacing:-.01em}
+.mast-kicker{font-family:"IBM Plex Sans",sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.mast-sub{font-style:italic;font-size:15px;color:var(--ink2);max-width:640px;margin:6px auto 0}
+.mast-rule{height:4px;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:14px}
+
+/* info bar */
+.infobar{display:grid;grid-template-columns:1fr;gap:0;border-bottom:2px solid var(--rule);font-family:"IBM Plex Sans",sans-serif;font-size:13.5px}
+.infobar div{padding:10px 4px;border-bottom:1px solid var(--rule-light);display:flex;gap:8px}
+.infobar div:last-child{border-bottom:none}
+.infobar b{white-space:nowrap}
+@media(min-width:760px){.infobar{grid-template-columns:1.2fr 1fr 1fr}.infobar div{border-bottom:none;border-right:1px solid var(--rule-light);padding:10px 12px}.infobar div:last-child{border-right:none}}
+.free{color:var(--accent2);font-weight:700}
+
+/* lead */
+.lead{padding:20px 0 6px;border-bottom:2px solid var(--rule)}
+.kicker{font-family:"IBM Plex Sans",sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px}
+.lead h2{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(30px,6vw,48px);line-height:1.02;margin:0 0 10px}
+.dek{font-size:19px;line-height:1.45;color:var(--ink2);margin:0 0 14px}
+figure{margin:0}
+figure button.thumb{all:unset;display:block;width:100%;cursor:zoom-in}
+figure button.thumb:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+figure img{width:100%;height:auto;border:1px solid var(--rule-light)}
+figcaption{font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;color:var(--muted);padding:6px 0 0;line-height:1.4}
+.byline{font-family:"IBM Plex Sans",sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);padding:7px 0;margin:14px 0;display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
+.columns{columns:1;column-gap:28px}
+@media(min-width:760px){.columns{columns:2}}
+.columns p{margin:0 0 12px;break-inside:avoid}
+.dropcap::first-letter{font-family:"Playfair Display",serif;font-size:3.2em;float:left;line-height:.85;padding:4px 8px 0 0;font-weight:900}
+.lead-cards{display:grid;gap:12px;margin-top:16px}
+@media(min-width:700px){.lead-cards{grid-template-columns:repeat(3,1fr)}}
+.lead-card{background:var(--card);border:1px solid var(--rule-light);border-top:4px solid var(--ink);padding:14px}
+.lead-card h3{font-family:"Playfair Display",serif;font-size:19px;line-height:1.15;margin:0 0 6px}
+.lead-card p{font-size:14.5px;margin:0;color:var(--ink2)}
+.lead-card .when{font-family:"IBM Plex Sans",sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+
+/* section heads */
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0 8px;margin:28px 0 16px}
+.sec-head h2{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(26px,5vw,36px);margin:0;line-height:1}
+.sec-head span{font-family:"IBM Plex Sans",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+/* exhibitions */
+.ex-grid{display:grid;gap:18px}
+@media(min-width:760px){.ex-grid{grid-template-columns:1fr 1fr}.ex-grid .ex:first-child{grid-column:1/-1}}
+.ex{background:var(--card);border:1px solid var(--rule-light);overflow:hidden}
+.ex .txt{padding:16px}
+.ex h3{font-family:"Playfair Display",serif;font-size:24px;line-height:1.1;margin:0 0 2px}
+.ex .artist{font-style:italic;color:var(--ink2);margin:0 0 4px}
+.ex .dates{font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent2);margin:0 0 8px}
+.ex p.desc{margin:0;font-size:15.5px;color:var(--ink2)}
+.ex .badge-note{display:inline-block;margin-top:10px;font-family:"IBM Plex Sans",sans-serif;font-size:12px;background:var(--paper2);border:1px solid var(--rule-light);padding:5px 8px;border-radius:999px}
+.ex img{aspect-ratio:4/3;object-fit:cover;width:100%}
+@media(min-width:760px){.ex-grid .ex:first-child{display:grid;grid-template-columns:1.1fr 1fr}.ex-grid .ex:first-child img{height:100%;aspect-ratio:auto}}
+
+/* layout: calendar + sidebar */
+.main-grid{display:grid;gap:28px}
+@media(min-width:900px){.main-grid{grid-template-columns:1.65fr 1fr;align-items:start}}
+
+/* calendar */
+.cal{list-style:none;margin:0;padding:0}
+.cal li{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--rule-light)}
+.cal li:last-child{border-bottom:none}
+.cal .d{text-align:center;border:1px solid var(--rule);padding:8px 4px;background:var(--card);align-self:start}
+.cal .d b{display:block;font-family:"Playfair Display",serif;font-size:22px;line-height:1}
+.cal .d span{font-family:"IBM Plex Sans",sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cal h3{font-size:17px;margin:0 0 2px;line-height:1.25}
+.cal p{margin:0;font-size:14.5px;color:var(--ink2)}
+.cal .time{font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;font-weight:700;color:var(--accent)}
+.note-box{border:2px solid var(--rule);padding:14px;background:var(--paper2);margin-top:16px}
+.note-box h3{font-family:"Playfair Display",serif;margin:0 0 6px;font-size:19px}
+.note-box p{margin:0 0 8px;font-size:14.5px}
+.note-box p:last-child{margin:0}
+
+/* noteworthy */
+.side{border:1px solid var(--rule);background:var(--card)}
+.side-head{background:var(--ink);color:var(--paper);padding:10px 14px;font-family:"IBM Plex Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:700}
+.side article{padding:14px;border-bottom:1px solid var(--rule-light)}
+.side article:last-child{border-bottom:none}
+.side h3{font-family:"Playfair Display",serif;font-size:19px;margin:0 0 5px;line-height:1.15}
+.side p{margin:0;font-size:14.5px;color:var(--ink2)}
+.side .tag{font-family:"IBM Plex Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.member{margin-top:18px;border:2px solid var(--rule);padding:16px;background:var(--paper2)}
+.member h3{font-family:"Playfair Display",serif;font-size:22px;margin:0 0 8px}
+.member ul{margin:0;padding-left:18px;font-size:14.5px}
+.member li{margin-bottom:5px}
+
+.mission{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:18px 8px;margin:30px 0 0;text-align:center}
+.mission blockquote{font-family:"Playfair Display",serif;font-size:clamp(19px,3.5vw,25px);line-height:1.3;font-style:italic;margin:0 auto;max-width:760px}
+.mission cite{display:block;margin-top:8px;font-family:"IBM Plex Sans",sans-serif;font-style:normal;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+footer{margin-top:22px;border-top:3px double var(--rule);padding:16px 0 6px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center}
+.tip{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid var(--rule);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;background:var(--card)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(8,7,5,.96);color:#fff;display:none;z-index:50}
+.lb.open{display:flex;flex-direction:column}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;gap:10px}
+.lb-count{font-family:"IBM Plex Sans",sans-serif;font-size:13px;letter-spacing:.06em}
+.lb-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;cursor:pointer;font-size:18px;line-height:1;display:inline-flex;align-items:center;justify-content:center;padding:0 14px}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:6px 12px;position:relative}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;font-size:26px;padding:0}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-cap{padding:10px 16px 18px;text-align:center;font-family:"IBM Plex Sans",sans-serif;font-size:14px;color:#e8e0cd;max-width:800px;margin:0 auto}
+.lb-cap b{display:block;font-family:"Source Serif 4",serif;font-size:16px;color:#fff}
+.hint{font-family:"IBM Plex Sans",sans-serif;font-size:11.5px;color:var(--muted);margin-top:5px}
+</style>
+<script id="fsctl-boot">/* Text-size control (same house pattern as the other Gazettes, Dave's standing design, Nov 5, 2026): apply the reader's saved level before first paint. Default is level 0 — the floor, which renders at the paper's normal size. */
+try{var n=parseInt(localStorage.getItem('kg-font-size'),10);
+if(!(n>=0&&n<=6))n=0;document.documentElement.classList.add('fs-'+n);}catch(e){document.documentElement.classList.add('fs-0');}</script>
+<style id="fsctl-style">
+/* Text-size control: seven reader-chosen levels; level 0 (zoom 1) is the size the paper renders at
+   by default — the steps climb from there at +.08 to 1.48. The paper's type is set in px, so levels
+   scale the whole page with CSS zoom on <html>; the choice persists in localStorage ('kg-font-size').
+   Standing element, ported from the Fiddletown Gazette — preserve in every rebuild. */
+html.fs-0{zoom:1}html.fs-1{zoom:1.08}html.fs-2{zoom:1.16}html.fs-3{zoom:1.24}html.fs-4{zoom:1.32}html.fs-5{zoom:1.4}html.fs-6{zoom:1.48}
+.fsctl{display:flex;align-items:center;gap:7px;flex:none}
+.fs-btn{background:none;border:none;min-width:0;min-height:0;color:var(--ink);cursor:pointer;font-family:Georgia,serif;font-weight:700;line-height:1;padding:4px 2px;-webkit-tap-highlight-color:transparent}
+.fs-btn.fs-down{font-size:11px}
+.fs-btn.fs-up{font-size:18px}
+.fs-btn[disabled]{opacity:.3;cursor:default}
+.fs-dots{display:flex;gap:5px}
+.fs-dot{width:9px;height:9px;min-width:0;min-height:0;border-radius:50%;border:1.5px solid var(--muted);background:none;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fs-dot.on{background:var(--accent);border-color:var(--accent)}
+@media (max-width:640px){.fsctl{gap:5px}.fs-dot{width:8px;height:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topstrip">
+    <span>Vol. I &nbsp;·&nbsp; No. 1 &nbsp;·&nbsp; Kay's Gazette</span>
+    <span>Saturday, November 14, 2026</span>
+    <div class="fsctl" role="group" aria-label="Text size"><button type="button" class="fs-btn fs-down" id="fs-down" aria-label="Smaller text">A</button><span class="fs-dots"><button type="button" class="fs-dot" data-lvl="0" aria-label="Text size level 1 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="1" aria-label="Text size level 2 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="2" aria-label="Text size level 3 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="3" aria-label="Text size level 4 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="4" aria-label="Text size level 5 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="5" aria-label="Text size level 6 of 7" aria-pressed="false"></button><button type="button" class="fs-dot" data-lvl="6" aria-label="Text size level 7 of 7" aria-pressed="false"></button></span><button type="button" class="fs-btn fs-up" id="fs-up" aria-label="Larger text">A</button></div>
+  </div>
+
+  <header class="masthead">
+    <p class="mast-kicker">Recipes &nbsp;·&nbsp; Personal Projects &nbsp;·&nbsp; Est. 2026</p>
+    <h1>Kay's Gazette</h1>
+    <p class="mast-sub">Kay Korbel's own front page — her recipes and personal projects, published on her word.</p>
+    <div class="mast-rule"></div>
+  </header>
+
+  <div class="infobar">
+    <div><b>Editor</b><span>Kay Korbel — every word here runs with her approval</span></div>
+    <div><b>Sections</b><span>Recipes · Personal Projects</span></div>
+    <div><b>This issue</b><span>Founding edition — the presses are ready</span></div>
+  </div>
+
+  <section class="lead">
+    <p class="kicker">From the Publisher</p>
+    <h2>A Paper of Her Own</h2>
+    <p class="dek">Kay Korbel asked for a newspaper of her own — a place for her recipes and her personal projects — and this is it. This founding issue sets the presses; the content is hers to come.</p>
+    <div class="byline"><span>The Publisher's Desk</span><span>Saturday, November 14, 2026</span></div>
+    <div class="columns">
+      <p class="dropcap">Every paper needs a first issue, and most first issues are mostly promise. This one is no different — deliberately. Kay's Gazette exists because Kay asked for it: a front page of her own where her recipes and her personal projects can live, in her words, on her schedule.</p>
+      <p>Kay holds full editorial control over this paper. Nothing appears here that she hasn't sent or approved, and she can change anything in it — including who else may contribute — with a single email. The two sections below, Recipes and Personal Projects, are standing empty on purpose: they are hers to fill, starting whenever she is ready.</p>
+      <p>How it works is simple. Kay emails her material — a recipe, a project write-up, photos — and it is published here as she directs. Readers get a paper that grows one genuine contribution at a time, and Kay gets the last word on every line of it. Welcome to the first edition. The rest is up to the editor.</p>
+    </div>
+  </section>
+
+  <section id="recipes">
+    <div class="sec-head"><h2>Recipes</h2><span>From Kay's kitchen</span></div>
+    <div class="note-box">
+      <h3>Coming soon — the first recipe</h3>
+      <p>This column is reserved for Kay's recipes, published exactly as she sends them. The first one will appear here as soon as the editor sends it in — watch this space.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2>Personal Projects</h2><span>Kay's workbench</span></div>
+    <div class="note-box">
+      <h3>Coming soon — the first project</h3>
+      <p>This page is reserved for Kay's personal projects — write-ups and photos of whatever she is making, fixing, or building. The first project story will run here when the editor is ready to share it.</p>
+    </div>
+  </section>
+
+  <div class="note-box">
+    <h3>How this paper works</h3>
+    <p><b>One editor.</b> Kay Korbel is the only contributor to Kay's Gazette. Content arrives from Kay by email — with "Kay's Gazette" in the subject or body — and is published here under her direction, photos included.</p>
+    <p><b>Full control.</b> Kay can add, change, or retire anything on this page by email, and she alone decides if anyone else ever joins the contributor list.</p>
+  </div>
+
+  <footer>
+    <span>Kay's Gazette · Vol. I, No. 1 · Saturday, November 14, 2026</span>
+    <span>Edited by Kay Korbel · Published in Dave Dell'Aquila's Buddy System</span>
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-count" id="lbCount">1 / 1</span>
+    <button class="lb-btn" id="lbClose" type="button" aria-label="Close photo viewer">✕ Close</button>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <img id="lbImg" alt="">
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" type="button" aria-label="Next photo">›</button>
+  </div>
+  <p class="lb-cap" id="lbCap"></p>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'), img=document.getElementById('lbImg'),
+      cap=document.getElementById('lbCap'), count=document.getElementById('lbCount'),
+      prevBtn=document.getElementById('lbPrev'), nextBtn=document.getElementById('lbNext'),
+      closeBtn=document.getElementById('lbClose'), stage=document.getElementById('lbStage');
+  var group=[], idx=0, lastFocus=null;
+
+  function collect(fig){
+    // all photos within the same article/figure group context: group by data-group on the figure,
+    // fallback: photos in the closest article/section share a group if they share data-group value
+    var g=fig.getAttribute('data-group');
+    var nodes=document.querySelectorAll('figure[data-group="'+g+'"] img');
+    var arr=[]; nodes.forEach(function(n){arr.push({src:n.getAttribute('src'),alt:n.getAttribute('alt')||'',cap:n.getAttribute('data-caption')||n.getAttribute('alt')||''});});
+    return arr;
+  }
+  function render(){
+    var it=group[idx]; if(!it) return;
+    img.src=it.src; img.alt=it.alt;
+    cap.innerHTML='<b>'+(idx+1)+' of '+group.length+'</b>'+it.cap;
+    count.textContent=(idx+1)+' / '+group.length;
+    var multi=group.length>1;
+    prevBtn.style.display=multi?'inline-flex':'none';
+    nextBtn.style.display=multi?'inline-flex':'none';
+  }
+  function open(fig, targetImg){
+    group=collect(fig); idx=0;
+    for(var i=0;i<group.length;i++){ if(group[i].src===targetImg.getAttribute('src')){idx=i;break;} }
+    lastFocus=document.activeElement;
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+    render(); closeBtn.focus();
+  }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; img.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
+  function step(d){ if(group.length<2) return; idx=(idx+d+group.length)%group.length; render(); }
+
+  document.querySelectorAll('figure[data-group] button.thumb').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var fig=btn.closest('figure'); var im=fig.querySelector('img'); open(fig,im);
+    });
+  });
+  closeBtn.addEventListener('click',close);
+  prevBtn.addEventListener('click',function(e){e.stopPropagation();step(-1);});
+  nextBtn.addEventListener('click',function(e){e.stopPropagation();step(1);});
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target===stage) close(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') step(-1);
+    if(e.key==='ArrowRight') step(1);
+  });
+  // swipe
+  var sx=null;
+  stage.addEventListener('touchstart',function(e){sx=e.changedTouches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) step(dx<0?1:-1); sx=null; },{passive:true});
+})();
+</script>
+<script id="fsctl-script">
+/* Text-size control behavior (house pattern, Dave, Nov 5, 2026): level 0 is the floor at the paper's
+   normal size and the default; seven levels climb to 1.48. Small A steps down, big A steps up, the
+   seven dots show the level and jump straight to it. Level persists per reader in localStorage. */
+(function(){
+  var KEY='kg-font-size', lvl=0;
+  try{var n=parseInt(localStorage.getItem(KEY),10); if(n>=0&&n<=6) lvl=n;}catch(e){}
+  var root=document.documentElement;
+  var dots=[].slice.call(document.querySelectorAll('.fs-dot'));
+  var down=document.getElementById('fs-down'), up=document.getElementById('fs-up');
+  function apply(){ for(var i=0;i<7;i++) root.classList.remove('fs-'+i); root.classList.add('fs-'+lvl);
+    dots.forEach(function(d,i){ d.classList.toggle('on', i<=lvl); d.setAttribute('aria-pressed', i===lvl?'true':'false'); });
+    if(down) down.disabled=(lvl===0); if(up) up.disabled=(lvl===6);
+    try{localStorage.setItem(KEY,String(lvl));}catch(e){} }
+  if(down) down.addEventListener('click',function(){ if(lvl>0){lvl--; apply();} });
+  if(up) up.addEventListener('click',function(){ if(lvl<6){lvl++; apply();} });
+  dots.forEach(function(d,i){ d.addEventListener('click',function(){ lvl=i; apply(); }); });
+  apply();
+})();
+</script>
+</body>
+</html>
